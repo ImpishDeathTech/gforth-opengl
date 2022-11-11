@@ -308,7 +308,7 @@ C-FUNCTION gluDeleteQuadric         gluDeleteQuadric       a                    
 C-FUNCTION gluDeleteTess            gluDeleteTess          a                     -- void 
 
 \ void gluDisk (GLUquadric* quad, GLdouble inner, GLdouble outer, GLint slices, GLint loops);
-C-FUNCTION c-gluDisk                gluDisk                a r r n n             -- void
+C-FUNCTION gluDisk                  gluDisk                a r r n n             -- void
 
 \ void gluEndCurve (GLUnurbs* nurb);
 C-FUNCTION gluEndCurve              gluEndCurve            a                     -- void 
@@ -434,17 +434,29 @@ C-FUNCTION gluTessProperty         gluTessProperty          a n r               
 \ void gluTessVertex (GLUtesselator* tess, GLdouble *location, GLvoid* data);
 C-FUNCTION gluTessVectex           gluTessVertex            a a a                -- void
 
+\ GLint gluBuild1DMipmapLevels (GLenum target, GLint internalFormat, GLsizei width, GLenum format, GLenum type, GLint level, GLint base, GLint max, const void *data);
+C-FUNCTION gluBuild1DMipmampLevels gluBuild1DMipmapLevels   n n n n n n n n a     -- n
+
+\ GLint gluBuild1DMipmaps (GLenum target, GLint internalFormat, GLsizei width, GLenum format, GLenum type, const void *data);
+C-FUNCTION gluBuild1DMipmaps       gluBuild1DMipmaps        n n n n n a           -- n
+
+\ GLint gluBuild2DMipmapLevels (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLenum format, GLenum type, GLint level, GLint base, GLint max, const void *data);
+C-FUNCTION gluBuild2DMipmapLevels  gluBuild2DMipmapLevels   n n n n n n n n n a   -- n
+
+\ GLint gluBuild2DMipmaps (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLenum format, GLenum type, const void *data);
+C-FUNCTION gluBuild2DMipmaps       gluBuild2DMipmaps        n n n n n n a         -- n
+
+\ GLint gluBuild3DMipmapLevels (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLint level, GLint base, GLint max, const void *data);
+C-FUNCTION gluBuild3DMipmapLevels  gluBuild3DMipmapLevels   n n n n n n n n n n a -- n 
+
+\ GLint gluBuild3DMipmaps (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void *data);
+C-FUNCTION gluBuild3DMipmaps       gluBuild3DMipmaps        n n n n n n n a       -- n
+
+
 \ GLint gluUnProject (GLdouble winX, GLdouble winY, GLdouble winZ, const GLdouble *model, const GLdouble *proj, const GLint *view, GLdouble* objX, GLdouble* objY, GLdouble* objZ);
-C-FUNCTION gluUnProject            gluUnProject             r r r a a a a a a a  -- void
+C-FUNCTION gluUnProject            gluUnProject             r r r a a a a a a a       -- void
 
 \ GLint gluUnProject4 (GLdouble winX, GLdouble winY, GLdouble winZ, GLdouble clipW, const GLdouble *model, const GLdouble *proj, const GLint *view, GLdouble nearVal, GLdouble farVal, GLdouble* objX, GLdouble* objY, GLdouble* objZ, GLdouble* objW);
 C-FUNCTION gluProject4             gluProject4              r r r r a a a r r a a a a -- void
 
-\ GLint gluBuild1DMipmapLevels (GLenum target, GLint internalFormat, GLsizei width, GLenum format, GLenum type, GLint level, GLint base, GLint max, const void *data);
-\ GLint gluBuild1DMipmaps (GLenum target, GLint internalFormat, GLsizei width, GLenum format, GLenum type, const void *data);
-\ GLint gluBuild2DMipmapLevels (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLenum format, GLenum type, GLint level, GLint base, GLint max, const void *data);
-\ GLint gluBuild2DMipmaps (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLenum format, GLenum type, const void *data);
-\ GLint gluBuild3DMipmapLevels (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLint level, GLint base, GLint max, const void *data);
-\ GLint gluBuild3DMipmaps (GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void *data);
-
-END-C-LIBRARY a
+END-C-LIBRARY
