@@ -1,5 +1,5 @@
 \
-\ glu.4th
+\ glu.fs
 \
 \ A FORTH "Implementation/Wrapper" for the "Mesa 3-D grapics library"
 \ 
@@ -68,7 +68,7 @@
 
 INCLUDE ./gl.fs
 
-C-LIBRARY glu_lib
+C-LIBRARY glu
 s" GLU" ADD-LIB
 
 \c #if defined(__unix__) 
