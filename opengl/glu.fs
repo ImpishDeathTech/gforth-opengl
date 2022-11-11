@@ -1,7 +1,7 @@
 \
 \ glu.fs
 \
-\ A FORTH "Implementation/Wrapper" for the "Mesa 3-D grapics library"
+\ A FORTH Port for the "Mesa 3-D grapics library"
 \ 
 \ Original C code liscence:
 \ SGI FREE SOFTWARE LICENSE B (Version 2.0, Sept. 18, 2008)
@@ -33,7 +33,7 @@
 \ Silicon Graphics, Inc.
 \
 \
-\ FORTH "Implementation/Wrapper?" Subliscence:
+\ FORTH Port Subliscence:
 \ 
 \ BSD 3-Clause License
 \ 
