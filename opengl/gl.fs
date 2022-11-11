@@ -60,7 +60,7 @@
 \ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 \ 
 
-C-LIBRARY gl_lib
+C-LIBRARY gl
 s" GL"   ADD-LIB
 
 \c #if defined(__unix__) 
