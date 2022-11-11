@@ -1,7 +1,6 @@
 \
 \ gl.4th
 \
-\
 \ An unofficial FORTH "Implementation/Wrapper" for the "Mesa 3-D grapics library"
 \
 \ Original C code liscence:
