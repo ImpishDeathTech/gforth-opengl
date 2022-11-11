@@ -1,5 +1,5 @@
 \
-\ gl.4th
+\ gl.fs
 \
 \ An unofficial FORTH "Implementation/Wrapper" for the "Mesa 3-D grapics library"
 \
