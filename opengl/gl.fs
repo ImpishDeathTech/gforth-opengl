@@ -1,7 +1,7 @@
 \
 \ gl.fs
 \
-\ An unofficial FORTH "Implementation/Wrapper" for the "Mesa 3-D grapics library"
+\ An unofficial FORTH Port for the Mesa 3-D grapics library
 \
 \ Original C code liscence:
 \ Mesa 3-D graphics library
@@ -28,7 +28,7 @@
 \ OTHER DEALINGS IN THE SOFTWARE.
 \
 \
-\ FORTH "Implementation/Wrapper?" Subliscence:
+\ FORTH Port Subliscence:
 \ BSD 3-Clause License
 \ 
 \ Copyright (c) 2022, Christopher Stephen Rafuse (Fluffykins/Sanguine Night)
