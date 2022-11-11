@@ -1,11 +1,9 @@
 \
 \ glu.4th
 \
-\
 \ A FORTH "Implementation/Wrapper" for the "Mesa 3-D grapics library"
 \ 
-\ Original C code liscence
-\
+\ Original C code liscence:
 \ SGI FREE SOFTWARE LICENSE B (Version 2.0, Sept. 18, 2008)
 \ Copyright (C) 1991-2000 Silicon Graphics, Inc. All Rights Reserved.
 \ 
@@ -68,7 +66,7 @@
 \ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 \ 
 
-INCLUDE ./gl.4th
+INCLUDE ./gl.fs
 
 C-LIBRARY glu_lib
 s" GLU" ADD-LIB
@@ -111,7 +109,6 @@ GLU-TRUE CONSTANT GLU-VERSION-1.3
 100904 CONSTANT GLU-INVALID-OPERATION      
 
 ( NurbsDisplay )
-(        GLU-FILL )
 100240 CONSTANT GLU-OUTLINE-POLYGON
 100241 CONSTANT GLU-OUTLINE-PATCH  
 
