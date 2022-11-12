@@ -649,7 +649,9 @@ FFFFFFFF CONSTANT GL-CLIENT-ALL-ATTRIB-BITS
 
 DECIMAL
 
-( miscellaneous )
+( 
+    Miscellaneous 
+)
 
 \ void glClear(int);
 C-FUNCTION glClear              glClear             n       -- void
@@ -782,170 +784,314 @@ C-FUNCTION glFlush              glFlush                      -- void
 \ void glHint( GLenum target, GLenum mode );
 C-FUNCTION glHint               glHint               n n      --void
 
-( 
-    depth buffer 
-)
-
-\ GLAPI void GLAPIENTRY glClearDepth( GLclampd depth );
-
-\ GLAPI void GLAPIENTRY glDepthFunc( GLenum func );
-
-\ GLAPI void GLAPIENTRY glDepthMask( GLboolean flag );
-
-\ GLAPI void GLAPIENTRY glDepthRange( GLclampd near_val, GLclampd far_val );
 
 ( 
-    accumulation buffer 
+    Depth Buffer 
 )
 
-\ GLAPI void GLAPIENTRY glClearAccum( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha );
+\ void glClearDepth( GLclampd depth );
+C-FUNCTION glClearDepth         glClearDepth        r         -- void
 
-\ GLAPI void GLAPIENTRY glAccum( GLenum op, GLfloat value );
+\ void glDepthFunc( GLenum func );
+C-FUNCTION glDepthFunc          glDepthFunc         n         -- void
+
+\ void glDepthMask( GLboolean flag );
+C-FUNCTION glDepthMask          glDepthMask         n         -- void
+
+\ void glDepthRange( GLclampd near_val, GLclampd far_val );
+C-FUNCTION glDepthRange         glDepthRange        r r       -- void
+
+
+( 
+    Accumulation Buffer 
+)
+
+\ void glClearAccum( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha );
+C-FUNCTION glClearAccum         glClearAccum        r r r r   -- void
+
+\ void glAccum( GLenum op, GLfloat value );
+C-FUNCTION glAccum              glAccum             n r       -- void
+
 
 (
-    transformation
+    Transformation
 )
 
-\ GLAPI void GLAPIENTRY glMatrixMode( GLenum mode );
+\ void glMatrixMode( GLenum mode );
+C-FUNCTION glMatrixMode        glMatrixMode        n          -- void           
 
-\ GLAPI void GLAPIENTRY glOrtho( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near_val, GLdouble far_val );
+\ void glOrtho( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near_val, GLdouble far_val );
+C-FUNCTION glOrtho             glOrtho             r r r r r r -- void
 
-\ GLAPI void GLAPIENTRY glFrustum( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near_val, GLdouble far_val );
+\ void glFrustum( GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble near_val, GLdouble far_val );
+C-FUNCTION glFrustum           glFrustum           r r r r r r -- void
 
-\ GLAPI void GLAPIENTRY glViewport( GLint x, GLint y, GLsizei width, GLsizei height );
+\ void glViewport( GLint x, GLint y, GLsizei width, GLsizei height );
+C-FUNCTION glViewport          glViewport          n n n n    -- void
 
-\ GLAPI void GLAPIENTRY glPushMatrix( void );
+\ void glPushMatrix( void );
+C-FUNCTION glPushMatrix        glPushMatrix                   -- void
 
-\ GLAPI void GLAPIENTRY glPopMatrix( void );
+\ void glPopMatrix( void );
+C-FUNCTION glPopMatrix         glPopMatrix                    -- void
 
-\ GLAPI void GLAPIENTRY glLoadIdentity( void );
+\ void glLoadIdentity( void );
+C-FUNCTION glLoadIdentity      glLoadIdentity                 -- void
 
-\ GLAPI void GLAPIENTRY glLoadMatrixd( const GLdouble *m );
-\ GLAPI void GLAPIENTRY glLoadMatrixf( const GLfloat *m );
+\ void glLoadMatrixd( const GLdouble *m );
+C-FUNCTION glLoadMatrixd       glLoadMatrixd      a           -- void
 
-\ GLAPI void GLAPIENTRY glMultMatrixd( const GLdouble *m );
-\ GLAPI void GLAPIENTRY glMultMatrixf( const GLfloat *m );
+\ void glLoadMatrixf( const GLfloat *m );
+C-FUNCTION glLoadMatrixf       glLoadMatrixf      a           -- void
 
-\ GLAPI void GLAPIENTRY glRotated( GLdouble angle, GLdouble x, GLdouble y, GLdouble z );
-\ GLAPI void GLAPIENTRY glRotatef( GLfloat angle, GLfloat x, GLfloat y, GLfloat z );
+\ void glMultMatrixd( const GLdouble *m );
+C-FUNCTION glMultMatrixd       glLoadMatrixd      a           -- void
 
-\ GLAPI void GLAPIENTRY glScaled( GLdouble x, GLdouble y, GLdouble z );
-\ GLAPI void GLAPIENTRY glScalef( GLfloat x, GLfloat y, GLfloat z );
+\ void glMultMatrixf( const GLfloat *m );
+C-FUNCTION glMultMatrixf       glMultMatrixf      a           -- void
 
-\ GLAPI void GLAPIENTRY glTranslated( GLdouble x, GLdouble y, GLdouble z );
+\ void glRotated( GLdouble angle, GLdouble x, GLdouble y, GLdouble z );
+C-FUNCTION glRotated           glRotated          r r r r     -- void
+
+\ void glRotatef( GLfloat angle, GLfloat x, GLfloat y, GLfloat z );
+C-FUNCTION glRotatef           glRotatef          r r r r     -- void
+
+\ void glScaled( GLdouble x, GLdouble y, GLdouble z );
+C-FUNCTION glScaled            glScaled           r r r       -- void
+
+\ void glScalef( GLfloat x, GLfloat y, GLfloat z );
+C-FUNCTION glScalef            glScalef           r r r       -- void
+
+\ void glTranslated( GLdouble x, GLdouble y, GLdouble z );
+C-FUNCTION glTranslated        glTranslated       r r r       -- void
+
 
 (
-    display lists 
+    Display Lists
 )
 
-\ GLAPI GLboolean GLAPIENTRY glIsList( GLuint list );
+\ GLboolean glIsList( GLuint list );
+C-FUNCTION glIsList            glIsLIst           n           -- n
 
-\ GLAPI void GLAPIENTRY glDeleteLists( GLuint list, GLsizei range );
+\ void glDeleteLists( GLuint list, GLsizei range );
+C-FUNCTION glDeleteList        glDeleteList       n n         -- void
 
-\ GLAPI GLuint GLAPIENTRY glGenLists( GLsizei range );
+\ GLuint glGenLists( GLsizei range );
+C-FUNCTION glGenLists          glDeleteLists      n           -- n
 
-\ GLAPI void GLAPIENTRY glNewList( GLuint list, GLenum mode );
+\ void glNewList( GLuint list, GLenum mode );
+C-FUNCTION glNewList           glNewList          n n         -- void
 
-\ GLAPI void GLAPIENTRY glEndList( void );
+\ void glEndList( void );
+C-FUNCTION glEndList           glEndList                      -- void
 
-\ GLAPI void GLAPIENTRY glCallList( GLuint list );
+\ void glCallList( GLuint list );
+C-FUNCTION glCallList          glCallList         n           -- void
 
-\ GLAPI void GLAPIENTRY glCallLists( GLsizei n, GLenum type, const GLvoid *lists );
+\ void glCallLists( GLsizei n, GLenum type, const GLvoid *lists );
+C-FUNCTION glCallLists         glCallLists        n n a       -- void 
 
-\ GLAPI void GLAPIENTRY glListBase( GLuint base );
+\ void glListBase( GLuint base );
+C-FUNCTION glListBase          glListBase         n           -- void
+
 
 (
-    drawing functions
+    Drawing Functions
 )
 
-\ GLAPI void GLAPIENTRY glBegin( GLenum mode );
-\ 
-\ GLAPI void GLAPIENTRY glEnd( void );
-\ 
-\ 
-\ GLAPI void GLAPIENTRY glVertex2d( GLdouble x, GLdouble y );
-\ GLAPI void GLAPIENTRY glVertex2f( GLfloat x, GLfloat y );
-\ GLAPI void GLAPIENTRY glVertex2i( GLint x, GLint y );
-\ GLAPI void GLAPIENTRY glVertex2s( GLshort x, GLshort y );
-\ 
-\ GLAPI void GLAPIENTRY glVertex3d( GLdouble x, GLdouble y, GLdouble z );
-\ GLAPI void GLAPIENTRY glVertex3f( GLfloat x, GLfloat y, GLfloat z );
-\ GLAPI void GLAPIENTRY glVertex3i( GLint x, GLint y, GLint z );
-\ GLAPI void GLAPIENTRY glVertex3s( GLshort x, GLshort y, GLshort z );
-\ 
-\ GLAPI void GLAPIENTRY glVertex4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w );
-\ GLAPI void GLAPIENTRY glVertex4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w );
-\ GLAPI void GLAPIENTRY glVertex4i( GLint x, GLint y, GLint z, GLint w );
-\ GLAPI void GLAPIENTRY glVertex4s( GLshort x, GLshort y, GLshort z, GLshort w );
-\ 
-\ GLAPI void GLAPIENTRY glVertex2dv( const GLdouble *v );
-\ GLAPI void GLAPIENTRY glVertex2fv( const GLfloat *v );
-\ GLAPI void GLAPIENTRY glVertex2iv( const GLint *v );
-\ GLAPI void GLAPIENTRY glVertex2sv( const GLshort *v );
-\ 
-\ GLAPI void GLAPIENTRY glVertex3dv( const GLdouble *v );
-\ GLAPI void GLAPIENTRY glVertex3fv( const GLfloat *v );
-\ GLAPI void GLAPIENTRY glVertex3iv( const GLint *v );
-\ GLAPI void GLAPIENTRY glVertex3sv( const GLshort *v );
-\ 
-\ GLAPI void GLAPIENTRY glVertex4dv( const GLdouble *v );
-\ GLAPI void GLAPIENTRY glVertex4fv( const GLfloat *v );
-\ GLAPI void GLAPIENTRY glVertex4iv( const GLint *v );
-\ GLAPI void GLAPIENTRY glVertex4sv( const GLshort *v );
-\ 
-\ 
-\ GLAPI void GLAPIENTRY glNormal3b( GLbyte nx, GLbyte ny, GLbyte nz );
-\ GLAPI void GLAPIENTRY glNormal3d( GLdouble nx, GLdouble ny, GLdouble nz );
-\ GLAPI void GLAPIENTRY glNormal3f( GLfloat nx, GLfloat ny, GLfloat nz );
-\ GLAPI void GLAPIENTRY glNormal3i( GLint nx, GLint ny, GLint nz );
-\ GLAPI void GLAPIENTRY glNormal3s( GLshort nx, GLshort ny, GLshort nz );
-\ 
-\ GLAPI void GLAPIENTRY glNormal3bv( const GLbyte *v );
-\ GLAPI void GLAPIENTRY glNormal3dv( const GLdouble *v );
-\ GLAPI void GLAPIENTRY glNormal3fv( const GLfloat *v );
-\ GLAPI void GLAPIENTRY glNormal3iv( const GLint *v );
-\ GLAPI void GLAPIENTRY glNormal3sv( const GLshort *v );
-\ 
-\ 
-\ GLAPI void GLAPIENTRY glIndexd( GLdouble c );
-\ GLAPI void GLAPIENTRY glIndexf( GLfloat c );
-\ GLAPI void GLAPIENTRY glIndexi( GLint c );
-\ GLAPI void GLAPIENTRY glIndexs( GLshort c );
-\ GLAPI void GLAPIENTRY glIndexub( GLubyte c );  /* 1.1 */
-\ 
-\ GLAPI void GLAPIENTRY glIndexdv( const GLdouble *c );
-\ GLAPI void GLAPIENTRY glIndexfv( const GLfloat *c );
-\ GLAPI void GLAPIENTRY glIndexiv( const GLint *c );
-\ GLAPI void GLAPIENTRY glIndexsv( const GLshort *c );
-\ GLAPI void GLAPIENTRY glIndexubv( const GLubyte *c );  /* 1.1 */
-\ 
-\ GLAPI void GLAPIENTRY glColor3b( GLbyte red, GLbyte green, GLbyte blue );
-\ GLAPI void GLAPIENTRY glColor3d( GLdouble red, GLdouble green, GLdouble blue );
-\ GLAPI void GLAPIENTRY glColor3f( GLfloat red, GLfloat green, GLfloat blue );
-\ GLAPI void GLAPIENTRY glColor3i( GLint red, GLint green, GLint blue );
-\ GLAPI void GLAPIENTRY glColor3s( GLshort red, GLshort green, GLshort blue );
-\ GLAPI void GLAPIENTRY glColor3ub( GLubyte red, GLubyte green, GLubyte blue );
-\ GLAPI void GLAPIENTRY glColor3ui( GLuint red, GLuint green, GLuint blue );
-\ GLAPI void GLAPIENTRY glColor3us( GLushort red, GLushort green, GLushort blue );
-\ 
-\ GLAPI void GLAPIENTRY glColor4b( GLbyte red, GLbyte green,
-\                                    GLbyte blue, GLbyte alpha );
-\ GLAPI void GLAPIENTRY glColor4d( GLdouble red, GLdouble green,
-\                                    GLdouble blue, GLdouble alpha );
-\ GLAPI void GLAPIENTRY glColor4f( GLfloat red, GLfloat green,
-\                                    GLfloat blue, GLfloat alpha );
-\ GLAPI void GLAPIENTRY glColor4i( GLint red, GLint green,
-\                                    GLint blue, GLint alpha );
-\ GLAPI void GLAPIENTRY glColor4s( GLshort red, GLshort green,
-\                                    GLshort blue, GLshort alpha );
-\ GLAPI void GLAPIENTRY glColor4ub( GLubyte red, GLubyte green,
-\                                     GLubyte blue, GLubyte alpha );
-\ GLAPI void GLAPIENTRY glColor4ui( GLuint red, GLuint green,
-\                                     GLuint blue, GLuint alpha );
-\ GLAPI void GLAPIENTRY glColor4us( GLushort red, GLushort green,
-\                                     GLushort blue, GLushort alpha );
-\ 
-\ 
+\ void glBegin( GLenum mode );
+C-FUNCTION glBegin             glBegin           n            -- void
+
+\ void glEnd( void );
+C-FUNCTION glEnd               glEnd                          -- void
+
+
+( vertex )
+
+\ void glVertex2d( GLdouble x, GLdouble y );
+C-FUNCTION glVertex2d          glVertex2d        r r          -- void
+
+\ void glVertex2f( GLfloat x, GLfloat y );
+C-FUNCTION glVertex2f          glVertex2f        r r          -- void
+
+\ void glVertex2i( GLint x, GLint y );
+C-FUNCTION glVertex2i          glVertex2i        n n          -- void
+
+\ void glVertex2s( GLshort x, GLshort y );
+C-FUNCTION glVertex2s          glVertex2s        n n          -- void
+
+
+\ void glVertex3d( GLdouble x, GLdouble y, GLdouble z );
+C-FUNCTION glVertex3d          glVertex3d        r r r        -- void
+
+\ void glVertex3f( GLfloat x, GLfloat y, GLfloat z );
+C-FUNCTION glVertex3f          glVertex3f        r r r        -- void
+
+\ void glVertex3i( GLint x, GLint y, GLint z );
+C-FUNCTION glVertex3i          glVertex3i        n n n        -- void
+
+\ void glVertex3s( GLshort x, GLshort y, GLshort z );
+C-FUNCTION glVertex3s          glVertex3s        n n n        -- void
+
+
+\ void glVertex4d( GLdouble x, GLdouble y, GLdouble z, GLdouble w );
+C-FUNCTION glVertex4d          glVertex4d        r r r r      -- void
+
+\ void glVertex4f( GLfloat x, GLfloat y, GLfloat z, GLfloat w );
+C-FUNCTION glVertex4f          glVertex4f        r r r r      -- void
+
+\ void glVertex4i( GLint x, GLint y, GLint z, GLint w );
+C-FUNCTION glVertex4i          glVertex4i        n n n n      -- void
+
+\ void glVertex4s( GLshort x, GLshort y, GLshort z, GLshort w );
+C-FUNCTION glVertex4s          glVertex4s        n n n n      -- void
+
+
+\ void glVertex2dv( const GLdouble *v );
+C-FUNCTION glVertex2dv         glVertex2dv       a            -- void
+
+\ void glVertex2fv( const GLfloat *v );
+C-FUNCTION glVertex2fv         glVertex2fv       a            -- void
+
+\ void glVertex2iv( const GLint *v );
+C-FUNCTION glVertex2iv         glVertex2iv       a            -- void    
+
+\ void glVertex2sv( const GLshort *v );
+C-FUNCTION glVertex2sv         glVertex2sv       a            -- void
+
+
+\ void glVertex3dv( const GLdouble *v );
+C-FUNCTION glVertex3dv         glVertex3dv       a            -- void
+
+\ void glVertex3fv( const GLfloat *v );
+C-FUNCTION glVertex3fv         glVertex3fv       a            -- void         
+
+\ void glVertex3iv( const GLint *v );
+C-FUNCTION glVertex3iv         glVertex3iv       a            -- void
+
+\ void glVertex3sv( const GLshort *v );
+C-FUNCTION glVertex3sv         glVertex3sv       a            -- void
+
+
+\ void glVertex4dv( const GLdouble *v );
+C-FUNCTION GlVertex4dv          glVertex4dv      a            -- void
+
+\ void glVertex4fv( const GLfloat *v );
+C-FUNCTION glVertex4fv          glVertex4dv      a            -- void
+
+\ void glVertex4iv( const GLint *v );
+C-FUNCTION glVertex4iv          glVertex4dv      a            -- void
+
+\ void glVertex4sv( const GLshort *v );
+C-FUNCTION glVertex4sv          glVertex4sv      a            -- void
+
+
+( normal )
+
+\ void glNormal3b( GLbyte nx, GLbyte ny, GLbyte nz );
+C-FUNCTION glNormal3b           glNormal3b       n n n        -- void
+
+\ void glNormal3d( GLdouble nx, GLdouble ny, GLdouble nz );
+C-FUNCTION glNormal3d           glNormal3d       r r r        -- void
+
+\ void glNormal3f( GLfloat nx, GLfloat ny, GLfloat nz );
+C-FUNCTION glNormal3f           glNormal3f       r r r        -- void
+
+\ void glNormal3i( GLint nx, GLint ny, GLint nz );
+C-FUNCTION glNormal3i           glNormal3i       n n n        -- void
+
+\ void glNormal3s( GLshort nx, GLshort ny, GLshort nz );
+C-FUNCTION glNormal3s           glNormal3s       n n n        -- void
+
+
+\ void glNormal3bv( const GLbyte *v );
+C-FUNCTION glNormal3bv          glNormal3bv      a            -- void
+
+\ void glNormal3dv( const GLdouble *v );
+C-FUNCTION glNormal3dv          glNormal3dv      a            -- void
+
+\ void glNormal3fv( const GLfloat *v );
+C-FUNCTION glNormal3fv          glNormal3fv      a            -- void
+
+\ void glNormal3iv( const GLint *v );
+C-FUNCTION glNormal3iv          glNormal3iv      a            -- void
+
+\ void glNormal3sv( const GLshort *v );
+C-FUNCTION glNormal3sv          glNormal3sv      a            -- void
+
+
+( index )
+
+\ void glIndexd( GLdouble c );
+C-FUNCTION glIndexd             glIndexd         r            -- void
+
+\ void glIndexf( GLfloat c );
+C-FUNCTION glIndexf             glIndexf         r            -- void
+
+\ void glIndexi( GLint c );
+C-FUNCTION glIndexi             glIndexi         n            -- void
+
+\ void glIndexs( GLshort c );
+C-FUNCTION glIndexs             glIndexs         n            -- void
+
+\ void glIndexub( GLubyte c );  /* 1.1 */
+C-FUNCTION glIndexub            glIndexub        n            -- void
+
+
+\ void glIndexdv( const GLdouble *c );
+C-FUNCTION glIndexdv            glIndexdv        a            -- void
+
+\ void glIndexfv( const GLfloat *c );
+C-FUNCTION glInduxfv            glIndexfv        a            -- void
+
+\ void glIndexiv( const GLint *c );
+C-FUNCTION glIndexiv            glIndexiv        a            -- void
+
+\ void glIndexsv( const GLshort *c );
+C-FUNCTION glIndexsv            glIndexsv        a            -- void
+
+\ void glIndexubv( const GLubyte *c );  /* 1.1 */
+C-FUNCTION glIndexbv            glIndexbv        a            -- void
+
+
+( color )
+
+\ void glColor3b( GLbyte red, GLbyte green, GLbyte blue );
+C-FUNCTION glColor3b            glColor3b        n n n        -- void
+
+\ void glColor3d( GLdouble red, GLdouble green, GLdouble blue );
+C-FUNCTION glColor3d            glColor3d        r r r        -- void
+
+\ void glColor3f( GLfloat red, GLfloat green, GLfloat blue );
+C-FUNCTION glColor3d            glColor3d        r r r        -- void
+
+\ void glColor3i( GLint red, GLint green, GLint blue );
+C-FUNCTION glColor3i            glColor3i        n n n        -- void
+
+\ void glColor3s( GLshort red, GLshort green, GLshort blue );
+C-FUNCTION glColor3s            glColor3s        n n n        -- void
+
+\ void glColor3ub( GLubyte red, GLubyte green, GLubyte blue );
+C-FUNCTION glColor3ub           glColor3ub       n n n        -- void
+
+\ void glColor3ui( GLuint red, GLuint green, GLuint blue );
+C-FUNCTION glColor3ui           glColor3ui       n n n        -- void
+
+\ void glColor3us( GLushort red, GLushort green, GLushort blue );
+C-FUNCTION glColor3us           glColor3us       n n n        -- void
+
+( TO DO )
+
+\ GLAPI void GLAPIENTRY glColor4b( GLbyte red, GLbyte green, GLbyte blue, GLbyte alpha );
+\ GLAPI void GLAPIENTRY glColor4d( GLdouble red, GLdouble green, GLdouble blue, GLdouble alpha );
+\ GLAPI void GLAPIENTRY glColor4f( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha );
+\ GLAPI void GLAPIENTRY glColor4i( GLint red, GLint green, GLint blue, GLint alpha );
+\ GLAPI void GLAPIENTRY glColor4s( GLshort red, GLshort green, GLshort blue, GLshort alpha );
+\ GLAPI void GLAPIENTRY glColor4ub( GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha );
+\ GLAPI void GLAPIENTRY glColor4ui( GLuint red, GLuint green, GLuint blue, GLuint alpha );
+\ GLAPI void GLAPIENTRY glColor4us( GLushort red, GLushort green, GLushort blue, GLushort alpha );
+
+
 \ GLAPI void GLAPIENTRY glColor3bv( const GLbyte *v );
 \ GLAPI void GLAPIENTRY glColor3dv( const GLdouble *v );
 \ GLAPI void GLAPIENTRY glColor3fv( const GLfloat *v );
@@ -954,7 +1100,8 @@ C-FUNCTION glHint               glHint               n n      --void
 \ GLAPI void GLAPIENTRY glColor3ubv( const GLubyte *v );
 \ GLAPI void GLAPIENTRY glColor3uiv( const GLuint *v );
 \ GLAPI void GLAPIENTRY glColor3usv( const GLushort *v );
-\ 
+
+
 \ GLAPI void GLAPIENTRY glColor4bv( const GLbyte *v );
 \ GLAPI void GLAPIENTRY glColor4dv( const GLdouble *v );
 \ GLAPI void GLAPIENTRY glColor4fv( const GLfloat *v );
