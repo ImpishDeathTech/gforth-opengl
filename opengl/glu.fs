@@ -454,9 +454,9 @@ C-FUNCTION gluBuild3DMipmaps       gluBuild3DMipmaps        n n n n n n n a     
 
 
 \ GLint gluUnProject (GLdouble winX, GLdouble winY, GLdouble winZ, const GLdouble *model, const GLdouble *proj, const GLint *view, GLdouble* objX, GLdouble* objY, GLdouble* objZ);
-C-FUNCTION gluUnProject            gluUnProject             r r r a a a a a a a       -- void
+C-FUNCTION gluUnProject            gluUnProject             r r r a a a a a a a       -- n
 
 \ GLint gluUnProject4 (GLdouble winX, GLdouble winY, GLdouble winZ, GLdouble clipW, const GLdouble *model, const GLdouble *proj, const GLint *view, GLdouble nearVal, GLdouble farVal, GLdouble* objX, GLdouble* objY, GLdouble* objZ, GLdouble* objW);
-C-FUNCTION gluProject4             gluProject4              r r r r a a a r r a a a a -- void
+C-FUNCTION gluProject4             gluProject4              r r r r a a a r r a a a a -- n
 
 END-C-LIBRARY
