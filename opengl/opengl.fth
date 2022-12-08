@@ -1,4 +1,4 @@
-\ opengl.fs
+\ opengl.fth
 
 \ This file is not a part of gforth or an official implementation of the Mesa 3_D graphics lib
 
